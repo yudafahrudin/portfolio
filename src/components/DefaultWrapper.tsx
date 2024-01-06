@@ -8,12 +8,7 @@ import {
   useTheme,
   Box,
 } from "@mui/material";
-import {
-  AccountCircleOutlined,
-  Laptop,
-  CoffeeMaker,
-  CoffeeOutlined,
-} from "@mui/icons-material";
+import { CoffeeOutlined } from "@mui/icons-material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 interface Props {

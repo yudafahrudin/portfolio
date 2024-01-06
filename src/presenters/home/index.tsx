@@ -4,13 +4,15 @@ import React, { useState } from "react";
 import {
   Stack,
   Typography,
-  Divider,
+  IconButton,
   useMediaQuery,
   useTheme,
-  Box,
   Grid,
   Chip,
+  Button,
 } from "@mui/material";
+
+import { EmailOutlined } from "@mui/icons-material";
 
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
@@ -49,6 +51,7 @@ const HomePresenter: React.FC = () => {
                   title={data.title}
                   description={data.description}
                   url={data.url}
+                  date={data.date}
                   action={
                     <>
                       {data.tech.map((tech) => {
@@ -69,6 +72,20 @@ const HomePresenter: React.FC = () => {
             );
           })}
         </Grid>
+      )}
+      {tabValue === "contact" && (
+        <Stack spacing={1}>
+          <Stack justifyContent="center">
+            <Button sx={{ padding: 2 }}>
+              <EmailOutlined /> ahmadyudafahrudin@gmail.com
+            </Button>
+          </Stack>
+          <Typography>
+            If you're looking to connect, to discuss a potential collaboration
+            or just to say hello, feel free to reach out to me by sending an
+            email.
+          </Typography>
+        </Stack>
       )}
     </Stack>
   );

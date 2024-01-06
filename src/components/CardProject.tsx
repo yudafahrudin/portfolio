@@ -1,5 +1,5 @@
 import React from "react";
-import { Stack, Typography, IconButton } from "@mui/material";
+import { Stack, Typography, IconButton, Box } from "@mui/material";
 import { Link } from "@mui/icons-material";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
@@ -22,20 +22,28 @@ const openLink = (url?: string) => {
 
 const CardProjects: React.FC<Props> = (props) => {
   return (
-    <Card sx={{ height: 240, display: "flex", flexDirection: "column" }} raised>
+    <Card
+      sx={{
+        paddingBottom: 5,
+        height: 350,
+      }}
+      raised
+    >
       <CardHeader title={props.title} subheader={props.date} />
       <CardContent>
-        <Typography variant="body2" color="text.secondary">
-          {props.description}
-        </Typography>
-      </CardContent>
-      <CardContent sx={{ marginTop: "auto" }}>
-        <Stack spacing={1} justifyContent="center" direction="row" pb={1}>
-          {props.action}
+        <Stack spacing={2}>
+          <Typography variant="body2" color="text.secondary">
+            {props.description}
+          </Typography>
+          <Stack spacing={1} justifyContent="center" pb={1}>
+            {props.action}
+          </Stack>
+          <Box>
+            <IconButton onClick={() => openLink(props.url)}>
+              <Link />
+            </IconButton>
+          </Box>
         </Stack>
-        <IconButton onClick={() => openLink(props.url)}>
-          <Link />
-        </IconButton>
       </CardContent>
     </Card>
   );
