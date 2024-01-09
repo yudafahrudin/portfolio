@@ -1,25 +1,26 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import {
   Stack,
   Typography,
-  IconButton,
   useMediaQuery,
   useTheme,
   Grid,
-  Chip,
   Button,
+  Tabs,
+  Tab,
+  Tooltip,
 } from "@mui/material";
-
 import { EmailOutlined } from "@mui/icons-material";
 
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-
+// internal
 import CardProject from "@/components/CardProject";
 
+// config
 import { EXPERIENCE } from "./config";
+
 const HomePresenter: React.FC = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
@@ -32,6 +33,7 @@ const HomePresenter: React.FC = () => {
         Hello, My Name Yuda ✋ I like explore new things in the field of
         Computers & Science.
       </Typography>
+
       <Tabs
         value={tabValue}
         onChange={(_, value) => setTabValue(value)}
@@ -57,14 +59,16 @@ const HomePresenter: React.FC = () => {
                   action={
                     <>
                       {data.tech.map((tech) => {
-                        if (!tech.color)
-                          return <Chip variant="outlined" label={tech.label} />;
                         return (
-                          <Chip
-                            variant="outlined"
-                            sx={{ borderColor: tech.color }}
-                            label={tech.label}
-                          />
+                          <Tooltip title={tech.label} arrow>
+                            <Image
+                              priority
+                              width={30}
+                              height={30}
+                              src={tech.icon}
+                              alt="Angular"
+                            />
+                          </Tooltip>
                         );
                       })}
                     </>
@@ -90,10 +94,12 @@ const HomePresenter: React.FC = () => {
                     <>
                       {data.tech.map((tech) => {
                         return (
-                          <Chip
-                            variant="outlined"
-                            sx={{ borderColor: tech.color }}
-                            label={tech.label}
+                          <Image
+                            priority
+                            width={30}
+                            height={30}
+                            src={tech.icon}
+                            alt="Angular"
                           />
                         );
                       })}

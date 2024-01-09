@@ -1,3 +1,9 @@
+import angularIcon from "@/assets/angular.svg";
+import nextjsIcon from "@/assets/nextjs.svg";
+import nodeJsIcon from "@/assets/nodejs.svg";
+import reactJsIcon from "@/assets/reactjs.svg";
+import graphQLIcon from "@/assets/graphql.svg";
+
 export const EXPERIENCE = [
   {
     title: "Rey",
@@ -6,8 +12,8 @@ export const EXPERIENCE = [
     description: "insurance technology, healthcare app",
     url: "https://rey.id",
     tech: [
-      { label: "NEXT JS", color: "black" },
-      { label: "GraphQL", color: "#fc6c85" },
+      { label: "NEXT JS", color: "black", icon: nextjsIcon },
+      { label: "GraphQL", color: "#fc6c85", icon: graphQLIcon },
     ],
   },
 
@@ -18,9 +24,9 @@ export const EXPERIENCE = [
     description: "e-commerce solution, enabler commerce",
     url: "https://www.sirclo.com",
     tech: [
-      { label: "React JS", color: "#009dd1" },
-      { label: "GraphQL", color: "#fc6c85" },
-      { label: "NodeJs", color: "green" },
+      { label: "React JS", color: "#009dd1", icon: reactJsIcon },
+      { label: "GraphQL", color: "#fc6c85", icon: graphQLIcon },
+      { label: "NodeJs", color: "green", icon: nodeJsIcon },
     ],
   },
   {
@@ -29,7 +35,7 @@ export const EXPERIENCE = [
     date: "Indonesia - 2021",
     description: "Cloud ERP, business digitalization solution",
     url: "https://vontis.id/vontis/id/about.html",
-    tech: [{ label: "Angular", color: "red" }],
+    tech: [{ label: "Angular", color: "red", icon: angularIcon }],
   },
   {
     title: "Halobro",
@@ -38,8 +44,8 @@ export const EXPERIENCE = [
     description: "Turns chat data into a meaningful business insights. ",
     url: "https://www.linkedin.com/company/halobro/about",
     tech: [
-      { label: "React JS", color: "#009dd1" },
-      { label: "NodeJs", color: "green" },
+      { label: "React JS", color: "#009dd1", icon: reactJsIcon },
+      { label: "NodeJs", color: "green", icon: nodeJsIcon },
     ],
   },
   {
@@ -50,8 +56,8 @@ export const EXPERIENCE = [
       "Construction management software. Digitise and automate construction worksite workflows.",
     url: "https://hubble.build",
     tech: [
-      { label: "React JS", color: "#009dd1" },
-      { label: "React Native", color: "#009dd1" },
+      { label: "React JS", color: "#009dd1", icon: reactJsIcon },
+      { label: "React Native", color: "#009dd1", icon: reactJsIcon },
     ],
   },
   {
@@ -61,8 +67,8 @@ export const EXPERIENCE = [
     description: "mini project to catch pokemon from tokopedia challenge",
     url: "https://pokeworld-me.vercel.app",
     tech: [
-      { label: "React JS", color: "#009dd1" },
-      { label: "GraphQL", color: "#fc6c85" },
+      { label: "React JS", color: "#009dd1", icon: reactJsIcon },
+      { label: "GraphQL", color: "#fc6c85", icon: graphQLIcon },
     ],
   },
 ];

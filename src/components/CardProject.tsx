@@ -1,5 +1,5 @@
 import React from "react";
-import { Stack, Typography, IconButton, Box } from "@mui/material";
+import { Stack, Typography, Button, Box } from "@mui/material";
 import { Link } from "@mui/icons-material";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
@@ -25,7 +25,7 @@ const CardProjects: React.FC<Props> = (props) => {
     <Card
       sx={{
         paddingBottom: 5,
-        height: 350,
+        height: 250,
       }}
       raised
     >
@@ -35,13 +35,15 @@ const CardProjects: React.FC<Props> = (props) => {
           <Typography variant="body2" color="text.secondary">
             {props.description}
           </Typography>
-          <Stack spacing={1} justifyContent="center" pb={1}>
+          <Stack spacing={1} direction="row" justifyContent="center" pb={1}>
             {props.action}
           </Stack>
           <Box>
-            <IconButton onClick={() => openLink(props.url)}>
-              <Link />
-            </IconButton>
+            <Button onClick={() => openLink(props.url)}>
+              <Stack spacing={1} direction="row">
+                <Link /> <Typography fontSize={13}> go to link</Typography>
+              </Stack>
+            </Button>
           </Box>
         </Stack>
       </CardContent>
