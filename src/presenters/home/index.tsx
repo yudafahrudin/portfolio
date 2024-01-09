@@ -24,7 +24,7 @@ const HomePresenter: React.FC = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-  const [tabValue, setTabValue] = useState("project");
+  const [tabValue, setTabValue] = useState("work");
 
   return (
     <Stack spacing={3} textAlign="center">
@@ -38,13 +38,15 @@ const HomePresenter: React.FC = () => {
         variant="scrollable"
         scrollButtons="auto"
       >
-        <Tab label="MY PROJECTS & EXPERIENCE" value="project" />
+        <Tab label="WORK EXPERIENCE" value="work" />
+        <Tab label="PROJECTS" value="project" />
         <Tab label="CONTACT" value="contact" />
       </Tabs>
 
-      {tabValue === "project" && (
+      {tabValue === "work" && (
         <Grid container>
           {EXPERIENCE.map((data) => {
+            if (data.type !== "work") return null;
             return (
               <Grid item xs={12} md={3} padding={1}>
                 <CardProject
@@ -73,6 +75,37 @@ const HomePresenter: React.FC = () => {
           })}
         </Grid>
       )}
+      {tabValue === "project" && (
+        <Grid container>
+          {EXPERIENCE.map((data) => {
+            if (data.type !== "project") return null;
+            return (
+              <Grid item xs={12} md={3} padding={1}>
+                <CardProject
+                  title={data.title}
+                  description={data.description}
+                  url={data.url}
+                  date={data.date}
+                  action={
+                    <>
+                      {data.tech.map((tech) => {
+                        return (
+                          <Chip
+                            variant="outlined"
+                            sx={{ borderColor: tech.color }}
+                            label={tech.label}
+                          />
+                        );
+                      })}
+                    </>
+                  }
+                />
+              </Grid>
+            );
+          })}
+        </Grid>
+      )}
+
       {tabValue === "contact" && (
         <Stack spacing={1}>
           <Stack justifyContent="center">
